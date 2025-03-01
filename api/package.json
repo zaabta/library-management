@@ -6,12 +6,17 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "ts-node server.ts"
+    "dev": "ts-node server.ts",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "docker:build": "docker compose up -d --build",
+    "docker:postgres": "docker run -p 55432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=library -d postgres:14.7"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.4.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -24,6 +29,7 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.5",
     "nodemon": "^3.1.9",
+    "prisma": "^6.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
