@@ -5,8 +5,8 @@ export const byIdSchema = z.object({
 })
 
 export const createBookSchema = z.object({
-  title: z.string().min(3, 'Name must be at least 3 characters long'),
-  author: z.string().email('Invalid email address'),
+  title: z.string(),
+  author: z.string(),
 })
 
-export type TCreateUser = z.infer<typeof createBookSchema>
+export type TCreateBook = z.infer<typeof createBookSchema>
