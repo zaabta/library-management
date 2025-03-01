@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (_, res: Response) => {
   res.send('library-management api')
 })
+
 app.use('/api/v1', routes)
 
 // 404 Handler
