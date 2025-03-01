@@ -3,6 +3,9 @@ import { z } from 'zod'
 export const paginationSchema = z.object({
   page: z.coerce.number().int().positive().default(1),
   perPage: z.coerce.number().int().positive().max(100).default(10),
+  available: z.union([z.literal('true'), z.literal('false')])
+    .optional()
+    .transform(val => val === 'true'),
 })
 
 export type TPaginationSchema = Zod.infer<typeof paginationSchema>
