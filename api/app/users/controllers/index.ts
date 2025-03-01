@@ -1,12 +1,24 @@
 import type { Request, Response } from 'express'
-import { getUsers, getUserOrThrow, createUser } from '../services'
+import {
+  getUsers,
+  getUserOrThrow,
+  createUser,
+  borrowBook as borrowBookServices,
+  returnBook,
+} from '../services'
 import { paginationSchema } from '../../../utils/paginator'
 import {
   successWithMessage,
   serverError,
   failedWithMessage,
 } from '../../../utils/responses'
-import { byIdSchema, createUserSchema } from '../validations'
+import { formatValidationErrors } from '../../../utils/format'
+import {
+  borrowBookSchema,
+  byIdSchema,
+  createUserSchema,
+  returnBorrowedBookSchema,
+} from '../validations'
 
 export const list = async (req: Request, res: Response) => {
   try {
@@ -38,7 +50,7 @@ export const create = async (req: Request, res: Response) => {
   try {
     const parsedUserSchema = createUserSchema.safeParse(req.body)
     if (!parsedUserSchema.success) {
-      failedWithMessage(parsedUserSchema.error.message, res)
+      failedWithMessage(formatValidationErrors(parsedUserSchema.error.errors), res)
       return
     }
     const newUser = await createUser(parsedUserSchema.data)
@@ -46,5 +58,42 @@ export const create = async (req: Request, res: Response) => {
   } catch (e) {
     console.log('ERROR --> ', e)
     serverError(res)
+  }
+}
+
+export const borrowBook = async (req: Request, res: Response) => {
+  try {
+    const parsedUserSchema = borrowBookSchema.safeParse(req.params)
+    if (!parsedUserSchema.success) {
+      failedWithMessage(formatValidationErrors(parsedUserSchema.error.errors), res)
+      return
+    }
+    const borrowedBook = await borrowBookServices(parsedUserSchema.data)
+    successWithMessage('book is borrowed successfully', res, borrowedBook)
+  } catch (e) {
+    console.log('ERROR --> ', e)
+    serverError(res, (e as Error).message)
+  }
+}
+
+export const returnBorrowedBook = async (req: Request, res: Response) => {
+  try {
+    const parsedUserSchema = returnBorrowedBookSchema.safeParse({
+      ...req.params,
+      ...req.body,
+    })
+    if (!parsedUserSchema.success) {
+      failedWithMessage(formatValidationErrors(parsedUserSchema.error.errors), res)
+      return
+    }
+    const returnBorrowedBook = await returnBook(parsedUserSchema.data)
+    const result = {
+      ...returnBorrowedBook[0],
+      score: returnBorrowedBook[1].rating,
+    }
+    successWithMessage('book is returned successfully', res, result)
+  } catch (e) {
+    console.log('ERROR --> ', e)
+    serverError(res, (e as Error).message)
   }
 }

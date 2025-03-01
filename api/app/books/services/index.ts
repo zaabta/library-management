@@ -4,7 +4,7 @@ import {
   TPaginationArgs,
   TPaginationSchema,
 } from '../../../utils/paginator'
-import { TCreateUserSchema } from '../validations'
+import { TCreateUser } from '../validations'
 
 export const getBooks = async (paginationSchema: TPaginationSchema) => {
   const paginatorQuery = async ({ skip, take }: TPaginationArgs) => {
@@ -41,7 +41,7 @@ export const getBookOrThrow = async (id: number) => {
   }
 }
 
-export const createBook = async (data: TCreateUserSchema) => {
+export const createBook = async (data: TCreateUser) => {
   return await prisma.book.create({
     data,
   })

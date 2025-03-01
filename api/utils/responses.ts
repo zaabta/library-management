@@ -45,10 +45,10 @@ export const unauthenticated = (res: Response) =>
 export const failedWithMessage = (msg: string, res: Response) =>
   res.status(400).json(errorResponse(msg))
 
-export const serverError = (res: Response) =>
+export const serverError = (res: Response, error: string | null = null) =>
   res
     .status(500)
-    .json(errorResponse('Something went wrong, please try again later.'))
+    .json(errorResponse(error || 'Something went wrong, please try again later.'))
 
 export const forbidden = (res: Response) =>
   res.status(403).json(errorResponse('Forbidden'))

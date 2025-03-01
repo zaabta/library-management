@@ -9,4 +9,4 @@ export const createBookSchema = z.object({
   author: z.string().email('Invalid email address'),
 })
 
-export type TCreateUserSchema = z.infer<typeof createBookSchema>
+export type TCreateUser = z.infer<typeof createBookSchema>

@@ -12,6 +12,7 @@
     "dev": "nodemon --watch '*.ts' --exec 'ts-node' server.ts",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
+    "db:studio": " prisma studio",
     "docker:build": "docker compose up -d --build",
     "docker:postgres": "docker run -p 55432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=library -d postgres:14.7"
   },
