@@ -2,15 +2,16 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
   "scripts": {
-    "build": "tsc && prisma migrate deploy",
+    "build": "tsc && npx prisma generate && npx prisma migrate deploy",
     "start": "node dist/server.js",
     "dev": "nodemon --watch '*.ts' --exec 'ts-node' server.ts",
     "db:deploy": "prisma migrate deploy",
+    "postinstall": "prisma generate",
     "db:seed": "prisma db seed",
     "db:studio": " prisma studio",
     "docker:build": "docker compose up -d --build",

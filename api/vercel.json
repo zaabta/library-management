@@ -1,22 +1,17 @@
 {
     "version": 2,
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "server.ts"
-      }
-    ],
     "builds": [
       {
-        "src": "server.ts",
+        "src": "./server.ts",
         "use": "@vercel/node"
       }
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "server.ts"
+          "src": "/(.*)",
+          "dest": "/server.ts"
         }
-    ]
+    ],
+    "buildCommand": "npm run build && npx prisma generate"
   }
   

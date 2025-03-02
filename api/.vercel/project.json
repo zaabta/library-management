@@ -1,0 +1,15 @@
+{
+  "projectId": "prj_FlLDgyiMGmHFoWFx8X7e9QtcHj6u",
+  "orgId": "team_7guRCrAc9xpN5qFJfpLQrp4R",
+  "settings": {
+    "createdAt": 1740870980752,
+    "framework": "nodejs",
+    "devCommand": "npm run dev",
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".",
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "18.x"
+  }
+}
