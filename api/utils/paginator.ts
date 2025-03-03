@@ -31,6 +31,7 @@ export type PaginationResult<T> = Promise<{
     perPage: number
     prev: number | null
     next: number | null
+    total: number
   }
 }>
 
@@ -58,6 +59,7 @@ export async function paginator<
       perPage,
       prev: page > 1 ? page - 1 : null,
       next: page < lastPage ? page + 1 : null,
+      total: totalAndData['total'],
     },
   }
 }
