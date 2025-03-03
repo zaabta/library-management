@@ -1,0 +1,24 @@
+.user-detail {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    width: 100%;
+    h1 {
+        font-size: 1.5rem;
+        padding: 2vw 0;
+    }
+    .detail {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        gap: .5vw;
+        background-color: rgb(175, 173, 173);
+        padding: 2vw;
+        border: none;
+        border-radius: 2vw;
+    }  
+    .ant-table-wrapper {
+        width: 100%;
+    }
+}
