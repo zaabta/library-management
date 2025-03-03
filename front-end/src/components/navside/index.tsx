@@ -1,8 +1,6 @@
 import { type ReactNode } from "react"
-import { ImLibrary } from "react-icons/im";
-import { FaUsers } from "react-icons/fa";
-import { PiBooksFill } from "react-icons/pi";
-import { Divider } from "@heroui/divider";
+import { BookOutlined, UsergroupAddOutlined, HeatMapOutlined } from "@ant-design/icons"
+import { Divider } from "antd"
 import { NavLink } from 'react-router-dom'
 import './style.scss'
 
@@ -11,25 +9,25 @@ export const NavSide = ({ children }: { children: ReactNode }) => {
     <div className="navbar-wrapper">
         <nav>
             <div className="header">
-                <ImLibrary/>
+                <HeatMapOutlined />
                 <h1>Library Management</h1>
             </div>
-            <Divider/>
+            <Divider style={{ borderColor: 'white' }}/>
             <ul>
                 <li>
                     <NavLink to="/users" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <FaUsers />
+                    <UsergroupAddOutlined />
                         <label>Users</label>
                     </NavLink> 
                 </li>
                 <li>
                     <NavLink to="/books" className={({ isActive }) => isActive ? 'is-active' : ''}>
-                        <PiBooksFill />
+                        <BookOutlined />
                         <label>Books</label>
                     </NavLink>
                 </li>
             </ul>
-            <Divider/>
+            <Divider style={{ borderColor: 'white' }}/>
             <p className="footer">Ali Almanea</p>
         </nav>
         <>

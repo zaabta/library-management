@@ -16,10 +16,10 @@ export const api = axios.create({
 
 api.interceptors.response.use(
   (response) => {
-    const { success, message } = response.data
+    const { success, messages } = response.data
     const toaster =  {
       message: success ? 'success': 'error',
-      description: message,
+      description: messages,
     }
     success
       ? notification.success(toaster)
