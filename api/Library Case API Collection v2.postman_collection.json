@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "ad73eb82-af17-4996-b92f-8ad54a08b1cb",
+		"name": "Library Case API Collection v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30480733"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users?page=3&perPage=2&available=true",
+					"protocol": "https",
+					"host": [
+						"library-management-api-zaabtas-projects",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						},
+						{
+							"key": "perPage",
+							"value": "2"
+						},
+						{
+							"key": "available",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users?page=3&perPage=2&available=true",
+							"protocol": "https",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "perPage",
+									"value": "2"
+								},
+								{
+									"key": "available",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 09:12:39 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"d1-v6ZCZTStQ3o1pK+2GIslbmud39w\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::sjhph-1740993157818-61917e415ac7"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 5,\n                \"name\": \"Charlie White\",\n                \"email\": \"charlie@example.com\"\n            }\n        ],\n        \"meta\": {\n            \"lastPage\": 3,\n            \"perPage\": 2,\n            \"prev\": 2,\n            \"next\": null\n        }\n    },\n    \"messages\": \"list users successfully\",\n    \"time\": 1740993159030\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "library-management-api-zaabtas-projects.vercel.app/api/v1/users/1",
+					"host": [
+						"library-management-api-zaabtas-projects",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "library-management-api-zaabtas-projects.vercel.app/api/v1/users/1",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "818"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 09:47:38 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"332-YzLUgcXzcOQy+VivF1DqcfoMzZ8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::2zd67-1740995258219-00e42167be98"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"past\": [\n            {\n                \"id\": 2,\n                \"userId\": 1,\n                \"bookId\": 2,\n                \"borrowedAt\": \"2025-03-02T21:02:21.421Z\",\n                \"returnedAt\": \"2025-03-02T21:02:33.760Z\",\n                \"book\": {\n                    \"id\": 2,\n                    \"title\": \"1984\",\n                    \"author\": \"George Orwell\"\n                }\n            },\n            {\n                \"id\": 4,\n                \"userId\": 1,\n                \"bookId\": 3,\n                \"borrowedAt\": \"2025-03-03T09:18:09.300Z\",\n                \"returnedAt\": \"2025-03-03T09:47:26.889Z\",\n                \"book\": {\n                    \"id\": 3,\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"author\": \"Harper Lee\"\n                }\n            }\n        ],\n        \"present\": [\n            {\n                \"id\": 1,\n                \"userId\": 1,\n                \"bookId\": 1,\n                \"borrowedAt\": \"2025-03-02T21:02:17.733Z\",\n                \"returnedAt\": null,\n                \"book\": {\n                    \"id\": 1,\n                    \"title\": \"The Great Gatsby\",\n                    \"author\": \"F. Scott Fitzgerald\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"userId\": 1,\n                \"bookId\": 2,\n                \"borrowedAt\": \"2025-03-03T09:15:43.603Z\",\n                \"returnedAt\": null,\n                \"book\": {\n                    \"id\": 2,\n                    \"title\": \"1984\",\n                    \"author\": \"George Orwell\"\n                }\n            }\n        ]\n    },\n    \"messages\": \"user is received successfully\",\n    \"time\": 1740995258319\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/books?page=1&perPage=2&available=true",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "perPage",
+							"value": "2"
+						},
+						{
+							"key": "available",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/books?page=1&perPage=5&available=true",
+							"protocol": "https",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "perPage",
+									"value": "5"
+								},
+								{
+									"key": "available",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "455"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 10:19:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1c7-czxPXd2Qya+B++AXm642NXQ5U4c\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::pgf5r-1740997142605-711fefdf7a93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"The Great Gatsby\",\n                \"author\": \"F. Scott Fitzgerald\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Moby-Dick\",\n                \"author\": \"Herman Melville\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"Pride and Prejudice\",\n                \"author\": \"Jane Austen\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"The Catcher in the Rye\",\n                \"author\": \"J.D. Salinger\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"The Hobbit\",\n                \"author\": \"J.R.R. Tolkien\"\n            }\n        ],\n        \"meta\": {\n            \"lastPage\": 2,\n            \"perPage\": 5,\n            \"prev\": null,\n            \"next\": 2\n        }\n    },\n    \"messages\": \"list books successfully\",\n    \"time\": 1740997143822\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/books/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/books/1",
+							"protocol": "https",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "364"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 03 Mar 2025 10:19:12 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"16c-rc2nMOxnC4uC2HlkXDNeSy57Qqs\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::flj2z-1740997152259-25dce395d66e"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"The Great Gatsby\",\n        \"author\": \"F. Scott Fitzgerald\",\n        \"score\": 5,\n        \"history\": [\n            {\n                \"user\": {\n                    \"id\": 1,\n                    \"name\": \"John Doe\",\n                    \"email\": \"john@example.com\"\n                },\n                \"borrowedAt\": \"2025-03-02T21:02:17.733Z\",\n                \"returnedAt\": \"2025-03-03T09:48:12.775Z\"\n            }\n        ],\n        \"available\": true,\n        \"currentUserBorrowing\": null\n    },\n    \"messages\": \"book is received successfully\",\n    \"time\": 1740997152412\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrow Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users/1/borrow/2",
+					"protocol": "https",
+					"host": [
+						"library-management-api-zaabtas-projects",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1",
+						"borrow",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrow Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users/1/borrow/2",
+							"protocol": "https",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"borrow",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "176"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Mar 2025 21:02:21 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"b0-e96B6MRGsMLCPxVwxdVGcHJpkEk\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::4lcqd-1740949341339-301ead499ca5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"userId\": 1,\n        \"bookId\": 2,\n        \"borrowedAt\": \"2025-03-02T21:02:21.421Z\",\n        \"returnedAt\": null\n    },\n    \"messages\": \"book is borrowed successfully\",\n    \"time\": 1740949341435\n}"
+				}
+			]
+		},
+		{
+			"name": "Return Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"score\": 2\n}"
+				},
+				"url": {
+					"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users/1/return/2",
+					"protocol": "https",
+					"host": [
+						"library-management-api-zaabtas-projects",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1",
+						"return",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Return Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"score\": 2\n}"
+						},
+						"url": {
+							"raw": "https://library-management-api-zaabtas-projects.vercel.app/api/v1/users/1/return/2",
+							"protocol": "https",
+							"host": [
+								"library-management-api-zaabtas-projects",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"return",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "208"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Mar 2025 21:02:33 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"d0-n0Oj36X/P8MjR6S/DG7mtwB2SYo\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "fra1::iad1::q6lt7-1740949353591-e7f61479f5a2"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"userId\": 1,\n        \"bookId\": 2,\n        \"borrowedAt\": \"2025-03-02T21:02:21.421Z\",\n        \"returnedAt\": \"2025-03-02T21:02:33.760Z\",\n        \"score\": 2\n    },\n    \"messages\": \"book is returned successfully\",\n    \"time\": 1740949353788\n}"
+				}
+			]
+		}
+	]
+}
