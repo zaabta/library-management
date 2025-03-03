@@ -101,7 +101,9 @@ const UserDetails = () => {
           columns={columns}
           dataSource={[...(user?.past || []), ...(user?.present || [])]}
           loading={loading}
-          pagination={false}
+          pagination={{
+            pageSize: 5
+          }}
         />
       </div>
       <BorrowBookModal visible={isOpenBorrowBookModal} userId={user?.id as number} onCancel={() => setIsOpenBorrowBookModal(false)} />
